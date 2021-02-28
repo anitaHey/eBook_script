@@ -1,0 +1,34 @@
+body {
+    font-family: "微軟正黑體";
+    font-size: 22px;
+    height: 100vh;
+    min-width: 100%;
+    background-color: #f6f5f3;
+}
+
+input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.upload_btn {
+    border: 3px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.upload_btn:hover {
+    background-color: #CCCCCC;
+}
+
+.btn_img {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tool/bootstrap-4.0.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>eBook_create</title>
+</head>
+
+<body class="pt-5 pl-5">
+    <div class="mb-5">
+    	<div class="mb-3">初始文件上傳</div>
+        <label for="init_upload" class="upload_btn">
+            <img src="asset/cloud-computing.png" alt="" class="mr-2 btn_img"> File Upload
+        </label>
+        <input id="init_upload" type="file" />
+    </div>
+    <div class="mb-5">
+    	<div class="mb-3">動畫文件上傳</div>
+        <label for="input_upload" class="upload_btn">
+            <img src="asset/cloud-computing.png" alt="" class="mr-2 btn_img"> File Upload
+        </label>
+        <input id="input_upload" type="file" />
+    </div>
+    <div class="mb-5">
+    	<div class="mb-3">素材資料夾選擇</div>
+        <label for="assets_upload" class="upload_btn">
+            <img src="asset/cloud-computing.png" alt="" class="mr-2 btn_img"> File Upload
+        </label>
+        <input type="file" id="assets_upload" webkitdirectory directory multiple/>
+    </div>
+    <script src="tool/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>
