@@ -90,16 +90,16 @@ function init() {
     }
 
     var canvas_word = '<html lang="zh-Hant-TW "><head>';
-    canvas_word +='<meta charset="utf-8">';
-    canvas_word +='<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5, shrink-to-fit=no" />';
-    canvas_word +='<link rel="stylesheet" href="css/reset.css">';
-    canvas_word +='<link rel="stylesheet" href="tool/bootstrap-4.0.0/dist/css/bootstrap.min.css">';
-    canvas_word +='<link rel="stylesheet" href="tool/fontawesome-free-5.6.3-web/css/all.min.css">';
-    canvas_word +='<link rel="stylesheet" href="tool/bootstrap-select-1.13.14/dist/css/bootstrap-select.min.css">';
-    canvas_word +='<link rel="stylesheet" href="css/style.css">';
-    canvas_word +='<title>EBook</title>';
-	canvas_word +='</head><body>';
-	canvas_word += '<div class="head"></div>';
+    canvas_word += '<meta charset="utf-8">';
+    canvas_word += '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5, shrink-to-fit=no" />';
+    canvas_word += '<link rel="stylesheet" href="css/reset.css">';
+    canvas_word += '<link rel="stylesheet" href="tool/bootstrap-4.0.0/dist/css/bootstrap.min.css">';
+    canvas_word += '<link rel="stylesheet" href="tool/fontawesome-free-5.6.3-web/css/all.min.css">';
+    canvas_word += '<link rel="stylesheet" href="tool/bootstrap-select-1.13.14/dist/css/bootstrap-select.min.css">';
+    canvas_word += '<link rel="stylesheet" href="css/style.css">';
+    canvas_word += '<title>EBook</title>';
+    canvas_word += '</head><body>';
+    canvas_word += '<div class="head"></div>';
     canvas_word += '<div class="first">';
     canvas_word += '<div class="d-flex justify-content-center">';
     canvas_word += '<div class="book_view">';
@@ -160,7 +160,7 @@ function init() {
     canvas_word += '<label for="page" class="ml-2 mr-2 page_word mt-4">頁</label>';
     canvas_word += '<button class="tool_btn next" id="next"><i class="fas fa-caret-right icon_fa"></i></button>';
     canvas_word += '<button class="tool_btn setting" data-toggle="modal" data-target="#settingModal"><img src="pic/settings.png" alt="" class="icon_pic"></button></div></div><div class="foot"></div>';
-    
+
     canvas_word += '<div class="modal fade" id="orientationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">';
     canvas_word += '    <div class="modal-dialog modal-dialog-centered" role="document">';
     canvas_word += '        <div class="modal-content">';
@@ -200,8 +200,29 @@ function init() {
     canvas_word += '<script src="js/pic_animation.js"></script>';
     canvas_word += '<script src="js/setting.js"></script></body></html>';
 
-    console.log(canvas_word);
+    var fs = require('fs');
+
+
+    fs.writeFile('test.html', canvas_word, (error) => { /* handle error */ });
 }
+
+// function download(data, filename, type) {
+//     var file = new Blob([data], { type: type });
+//     if (window.navigator.msSaveOrOpenBlob) // IE10+
+//         window.navigator.msSaveOrOpenBlob(file, filename);
+//     else { // Others
+//         var a = document.createElement("a"),
+//             url = URL.createObjectURL(file);
+//         a.href = url;
+//         a.download = filename;
+//         document.body.appendChild(a);
+//         a.click();
+//         setTimeout(function() {
+//             document.body.removeChild(a);
+//             window.URL.revokeObjectURL(url);
+//         }, 0);
+//     }
+// }
 
 function textCreate(input) {
     var page = input[0] - 1;
